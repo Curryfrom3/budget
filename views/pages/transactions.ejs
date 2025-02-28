@@ -1,0 +1,16 @@
+<h1>Your Transactions</h1>
+<a href="/transactions/add">Add New Transaction</a>
+
+<ul>
+    <% transactions.forEach(transaction => { %>
+        <li>
+            <strong><%= transaction.type.toUpperCase() %></strong>: $<%= transaction.amount %> - 
+            <%= transaction.category %> - <%= transaction.date.toDateString() %> 
+            <a href="/transactions/edit/<%= transaction._id %>">Edit</a>
+            <form action="/transactions/delete/<%= transaction._id %>" method="POST" style="display:inline;">
+                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+<a href="/dashboard">Back to Dashboard</a>

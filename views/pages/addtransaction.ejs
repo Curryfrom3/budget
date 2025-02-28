@@ -1,0 +1,23 @@
+<h1>Add New Transaction</h1>
+<form action="/transactions/add" method="POST">
+    <label>Type:</label>
+    <select name="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+    </select>
+    
+    <label>Amount:</label>
+    <input type="number" name="amount" required>
+
+    <label>Category:</label>
+    <input type="text" name="category" required>
+
+    <label>Date:</label>
+    <input type="date" name="date">
+
+    <label>Description (Optional):</label>
+    <textarea name="description"></textarea>
+
+    <button type="submit">Add Transaction</button>
+</form>
+<a href="/transactions">Back</a>
